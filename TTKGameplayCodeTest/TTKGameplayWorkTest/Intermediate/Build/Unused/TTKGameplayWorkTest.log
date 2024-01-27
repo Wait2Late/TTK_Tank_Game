@@ -1,3 +1,0 @@
-﻿  Using bundled DotNet SDK version: 6.0.302
-  Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" TTKGameplayWorkTestEditor Win64 DebugGame -Project="C:\Users\AndreasTykoson\Desktop\WorkTest\_Original\TTKGameplayCodeTestUpdated\TTKGameplayWorkTest\TTKGameplayWorkTest.uproject" -WaitMutex -FromMsBuild -Clean
-  Cleaning TTKGameplayWorkTestEditor binaries...
