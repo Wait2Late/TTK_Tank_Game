@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "TTKGameplayWorkTest",
+			"Path": "D:\\UnrealOriginal\\TTKGameplayWorkTest\\TTKGameplayWorkTest\\Source\\TTKGameplayWorkTest.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "TTKGameplayWorkTestEditor",
+			"Path": "D:\\UnrealOriginal\\TTKGameplayWorkTest\\TTKGameplayWorkTest\\Source\\TTKGameplayWorkTestEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
