@@ -29,9 +29,7 @@ public:
  * 
  */
 UCLASS(NotBlueprintable)
-class TTKGAMEPLAYWORKTEST_API UTTKGameplayWorkTestEnemySystem
-	: public UGameInstanceSubsystem
-	, public FTickableGameObject
+class TTKGAMEPLAYWORKTEST_API UTTKGameplayWorkTestEnemySystem : public UGameInstanceSubsystem, public FTickableGameObject
 {
 	GENERATED_BODY()
 

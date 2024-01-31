@@ -136,6 +136,7 @@ void ATTKGameplayWorkTestHeroPawn::ShootBegin()
 	SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	SpawnInfo.bDeferConstruction = true;
 
+	//First reason why it kept crashing is because it was not assigned in the blueprint. Thought it was strange why it giving me error on DrawDebugArrow.
 	ATTKGameplayWorkTestBullet* Bullet = GetWorld()->SpawnActor<ATTKGameplayWorkTestBullet>(BulletType, SpawnInfo);
 	FQuat ShootDirection = GetActorQuat();
 	FVector ShootLocation = GetActorLocation();
