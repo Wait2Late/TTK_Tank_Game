@@ -71,5 +71,10 @@ void ATTKGameplayWorkTestBullet::Tick(float DeltaSeconds)
 void ATTKGameplayWorkTestBullet::HandleCollision(AActor* OtherActor)
 {
 	Destroy();
-	OtherActor->Destroy();
+	// auto enemy = Cast<UTTKGameplayWorkTestEnemySystemComponent>(OtherActor); //Not going to use it
+	
+	// if (enemy)
+	// {
+		// OtherActor->Destroy(); //Little redundant to kill the same enemy multiple times
+	// }
 }

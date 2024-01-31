@@ -17,9 +17,12 @@ void UTTKGameplayWorkTestEnemySystemComponent::BeginPlay()
 			if (auto* EnemySystem = GameInstance->GetSubsystem<UTTKGameplayWorkTestEnemySystem>())
 			{
 				EnemySystem->Enemies.Add(this);
+				EnemySystem->EnemyHealth = EnemyStats->Health;
 			}
 		}
 	}
+	
+	
 }
 
 void UTTKGameplayWorkTestEnemySystemComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -43,17 +46,22 @@ void UTTKGameplayWorkTestEnemySystemComponent::EndPlay(const EEndPlayReason::Typ
 
 void UTTKGameplayWorkTestEnemySystem::Tick(float DeltaTime)
 {
-	for(auto* EnemyIt : Enemies)
+	for(auto* EnemyIt : Enemies) 
 	{
 		for(auto* BulletIt : Bullets)
 		{
 			auto* CollisionComp = BulletIt->FindComponentByClass<USphereComponent>();
 
-			const float Dist = FVector::Distance(BulletIt->GetActorLocation(), EnemyIt->GetComponentLocation());
-			if(Dist < CollisionComp->GetScaledSphereRadius() + 300)
+			const float Dist = FVector::Distance(BulletIt->GetActorLocation(), EnemyIt->GetComponentLocation()); //Getting an error and crash here
+			if(Dist < CollisionComp->GetScaledSphereRadius() + 900) //Increased the sphere radius to be able hit easier
 			{
 				BulletIt->HandleCollision(EnemyIt->GetOwner());
-				EnemyIt->GetOwner()->Destroy();
+
+				EnemyHealth--;
+				
+				if (EnemyHealth <= 0)
+					EnemyIt->GetOwner()->Destroy();
+
 				Bullets.Remove(BulletIt);
 			}
 		}
