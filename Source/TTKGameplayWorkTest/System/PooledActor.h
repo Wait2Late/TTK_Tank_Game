@@ -30,7 +30,7 @@ public:
 	void SetPoolIndex(int32 Index);
 	int GetPoolIndex();
 
-	bool IsActive();
+	bool GetIsActive();
 
 	
 protected:

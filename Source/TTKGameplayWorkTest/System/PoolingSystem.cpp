@@ -5,12 +5,12 @@
 
 
 
-
+//The main spawn method for the PooledActors.
 APooledActor* APoolingSystem::OnSpawnActor(FVector SpawnLocation)
 {
 	for (APooledActor* SpawnActor : PooledActors)
 	{
-		if (SpawnActor != nullptr && SpawnActor->IsActive() == false)
+		if (SpawnActor != nullptr && SpawnActor->GetIsActive() == false)
 		{
 			SpawnActor->TeleportTo(SpawnLocation, FRotator::ZeroRotator);
 			SpawnActor->SetLifeSpan(PooledActorLifeSpan); 
@@ -38,6 +38,7 @@ APooledActor* APoolingSystem::OnSpawnActor(FVector SpawnLocation)
 	return nullptr;
 }
 
+//This plays in the BeginPlay method. Usually ties in with another system.
 APooledActor* APoolingSystem::OnBeginPool()
 {
 	if (PooledActor != nullptr)
@@ -49,7 +50,7 @@ APooledActor* APoolingSystem::OnBeginPool()
 			{
 				PoolsActor->SetActive(false);
 				PoolsActor->SetPoolIndex(i);
-				PoolsActor->OnPooledCharacterDelegateDespawn.AddDynamic(this, &APoolingSystem::OnPooledActorDespawn);
+				PoolsActor->OnPooledActorDespawn.AddDynamic(this, &APoolingSystem::OnPooledActorDespawn);
 				PooledActors.Add(PoolsActor);
 			}
 		}
@@ -58,6 +59,7 @@ APooledActor* APoolingSystem::OnBeginPool()
 	return nullptr;
 }
 
+//Remves the indexes when the PooledActors are dead/gone. Broadcasts from the PooledActor class.
 void APoolingSystem::OnPooledActorDespawn(APooledActor* PooledActor)
 {
 	SpawnPooledActorIndexes.Remove(PooledActor->GetPoolIndex());
