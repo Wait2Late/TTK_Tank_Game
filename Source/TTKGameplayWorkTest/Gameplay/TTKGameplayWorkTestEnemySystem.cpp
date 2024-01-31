@@ -5,11 +5,19 @@
 #include "Components/SphereComponent.h"
 
 //////////////////////////////////////////////////////////
+void UTTKGameplayWorkTestEnemySystemComponent::TakeDamage(int DamageAmount)
+{
+	Health -= DamageAmount;
+
+	if (Health <= 0)
+		this->GetOwner()->Destroy();
+}
 
 void UTTKGameplayWorkTestEnemySystemComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
+	Health = EnemyStats->Health;
 	if (const UWorld* World = GetWorld())
 	{
 		if (const UGameInstance* GameInstance = World->GetGameInstance())
@@ -17,7 +25,6 @@ void UTTKGameplayWorkTestEnemySystemComponent::BeginPlay()
 			if (auto* EnemySystem = GameInstance->GetSubsystem<UTTKGameplayWorkTestEnemySystem>())
 			{
 				EnemySystem->Enemies.Add(this);
-				EnemySystem->EnemyHealth = EnemyStats->Health;
 			}
 		}
 	}
@@ -44,6 +51,8 @@ void UTTKGameplayWorkTestEnemySystemComponent::EndPlay(const EEndPlayReason::Typ
 //////////////////////////////////////////////////////////
 
 
+
+
 void UTTKGameplayWorkTestEnemySystem::Tick(float DeltaTime)
 {
 	for(auto* EnemyIt : Enemies) 
@@ -52,17 +61,22 @@ void UTTKGameplayWorkTestEnemySystem::Tick(float DeltaTime)
 		{
 			auto* CollisionComp = BulletIt->FindComponentByClass<USphereComponent>();
 
-			const float Dist = FVector::Distance(BulletIt->GetActorLocation(), EnemyIt->GetComponentLocation()); //Getting an error and crash here
-			if(Dist < CollisionComp->GetScaledSphereRadius() + 900) //Increased the sphere radius to be able hit easier
+			if (CollisionComp)
 			{
-				BulletIt->HandleCollision(EnemyIt->GetOwner());
+				const float Dist = FVector::Distance(BulletIt->GetActorLocation(), EnemyIt->GetComponentLocation()); //Getting an error and crash here
+				if(Dist < CollisionComp->GetScaledSphereRadius() + 900) //Increased the sphere radius to be able hit easier
+				{
+					
+					BulletIt->HandleCollision(EnemyIt->GetOwner());
+					//TODO I want to add a health system for the enemy
 
-				EnemyHealth--;
-				
-				if (EnemyHealth <= 0)
-					EnemyIt->GetOwner()->Destroy();
+					EnemyIt->TakeDamage(1);
+					
+					// EnemyIt->GetOwner()->Destroy(); //OG
 
-				Bullets.Remove(BulletIt);
+					Bullets.Remove(BulletIt);
+					
+				}
 			}
 		}
 	}

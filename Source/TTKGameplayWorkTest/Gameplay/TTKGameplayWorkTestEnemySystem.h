@@ -26,20 +26,23 @@ public:
 	int Health;
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+
+	void TakeDamage(int DamageAmount);
 };
 
 
 /**
  * 
  */
-UCLASS(NotBlueprintable)
+UCLASS(Blueprintable)
 class TTKGAMEPLAYWORKTEST_API UTTKGameplayWorkTestEnemySystem : public UGameInstanceSubsystem, public FTickableGameObject
 {
 	GENERATED_BODY()
 
+	// UTTKGameplayWorkTestEnemySystemComponent* EnemyIt;
 public:
-	UPROPERTY(Transient)
-	int EnemyHealth;
+	// UPROPERTY(BlueprintReadWrite)
+	// int EnemyHealth;
 	
 	UPROPERTY(Transient)
 	TArray<UTTKGameplayWorkTestEnemySystemComponent*> Enemies;
@@ -49,6 +52,7 @@ public:
 
 protected:
 
+	void DamageTaken(int DamageAmount, AActor* EnemyActor);
 	virtual void Tick( float DeltaTime ) override;
 	virtual TStatId GetStatId() const override { RETURN_QUICK_DECLARE_CYCLE_STAT(UTTKGameplayWorkTestEnemySystem, STATGROUP_Tickables); }
 };

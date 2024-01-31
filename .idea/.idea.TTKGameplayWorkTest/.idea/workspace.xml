@@ -8,14 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce8bb6ef-7f86-4538-883a-df26dc43b7aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/EnemyStats/EnemyStats.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/EnemyStats/EnemyStats.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TTKGameplayWorkTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TTKGameplayWorkTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Enemy/BP_Enemy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Enemy/BP_Enemy.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Level/TestWorld.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Level/TestWorld.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/Developer/RiderLink/Intermediate/FileSystemMappings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Developer/RiderLink/Intermediate/FileSystemMappings.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestBullet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestBullet.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestEnemySystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestEnemySystem.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestEnemySystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestEnemySystem.h" afterDir="false" />
     </list>
@@ -125,7 +121,7 @@
       <updated>1706267737952</updated>
       <workItem from="1706267739045" duration="3165000" />
       <workItem from="1706374190840" duration="1083000" />
-      <workItem from="1706696951522" duration="8986000" />
+      <workItem from="1706696951522" duration="13087000" />
     </task>
     <servers />
   </component>
