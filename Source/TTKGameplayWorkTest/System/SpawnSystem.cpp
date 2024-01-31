@@ -5,14 +5,13 @@
 
 #include "NavigationSystem.h"
 #include "NiagaraFunctionLibrary.h"
-#include "NiagaraFunctionLibrary.h"
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
 
 
+// Loops through the TMap storing the different pools for enemies and initializes them.
 void ASpawnSystem::OnInitializePools()
 {
-	// Loops through the TMap storing the different pools for enemies and initializes them.
 	for (auto Pool : EnemyPools)
 	{
 		Pool.Value->OnBeginPool();
@@ -59,6 +58,7 @@ FVector ASpawnSystem::GetRandomValidLocationAroundPlayer()
 	}
 }
 
+//When enemies dies. They are broadcasted which activates this method and removes the dead enemy from the wave array.
 void ASpawnSystem::RemoveDeadEnemyFromWave(APooledActor* PooledActor)
 {
 	RemainingEnemiesAmount -= 1;
@@ -69,7 +69,7 @@ void ASpawnSystem::RemoveDeadEnemyFromWave(APooledActor* PooledActor)
 	CurrentWaveEnemies.Shrink();
 }
 
-
+//The main spawn system. It can further adjust for a designer's vision. Right now this is a base version of it.
 void ASpawnSystem::SpawnWaves()
 {
 	EEnemyTypes CurrentEnemyType;
