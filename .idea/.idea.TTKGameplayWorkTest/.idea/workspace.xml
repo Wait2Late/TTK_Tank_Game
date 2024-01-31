@@ -8,7 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce8bb6ef-7f86-4538-883a-df26dc43b7aa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/System/SpawnSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/System/SpawnSystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestBullet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestBullet.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestEnemySystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestEnemySystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestEnemySystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestEnemySystem.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +118,7 @@
       <updated>1706267737952</updated>
       <workItem from="1706267739045" duration="3165000" />
       <workItem from="1706374190840" duration="1083000" />
-      <workItem from="1706696951522" duration="20129000" />
+      <workItem from="1706696951522" duration="20620000" />
     </task>
     <servers />
   </component>

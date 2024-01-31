@@ -71,10 +71,7 @@ void ATTKGameplayWorkTestBullet::Tick(float DeltaSeconds)
 void ATTKGameplayWorkTestBullet::HandleCollision(AActor* OtherActor)
 {
 	Destroy();
-	//Little redundant to kill the same enemy multiple times in different scripts
 	
-	// if (enemy)
-	// {
-		// OtherActor->Destroy(); 
-	// }
+	//Little redundant to kill the same enemy multiple times in different scripts
+	// OtherActor->Destroy(); 
 }

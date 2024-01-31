@@ -20,10 +20,13 @@ class TTKGAMEPLAYWORKTEST_API UTTKGameplayWorkTestEnemySystemComponent : public 
 	GENERATED_BODY()
 
 public:
+	//The designer only need to modify the DataAsset and only assign it once.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UEnemyStats* EnemyStats;
 
+	//Did a simple solution to provide its stats. Normally I would create a Struct.
 	int Health;
+
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 

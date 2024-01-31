@@ -16,8 +16,9 @@ void UTTKGameplayWorkTestEnemySystemComponent::TakeDamage(int DamageAmount)
 void UTTKGameplayWorkTestEnemySystemComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
+	//Sets the maxhealth from the EnemyStats DataAsset provided by the designer
 	Health = EnemyStats->Health;
+	
 	if (const UWorld* World = GetWorld())
 	{
 		if (const UGameInstance* GameInstance = World->GetGameInstance())
@@ -68,7 +69,6 @@ void UTTKGameplayWorkTestEnemySystem::Tick(float DeltaTime)
 				{
 					
 					BulletIt->HandleCollision(EnemyIt->GetOwner());
-					//TODO I want to add a health system for the enemy
 
 					EnemyIt->TakeDamage(1);
 					
