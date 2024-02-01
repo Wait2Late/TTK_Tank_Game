@@ -4,11 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "GameFramework/Character.h"
 #include "PooledActor.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPooledActorDespawn, APooledActor*, PooledActor);
 UCLASS()
-class TTKGAMEPLAYWORKTEST_API APooledActor : public AActor
+class TTKGAMEPLAYWORKTEST_API APooledActor : public ACharacter
 {
 	GENERATED_BODY()
 

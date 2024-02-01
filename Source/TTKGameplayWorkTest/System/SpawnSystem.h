@@ -26,7 +26,6 @@ class TTKGAMEPLAYWORKTEST_API ASpawnSystem : public AActor
 
 	void OnInitializePools();
 
-	//BUG something bizarre happened with this method. Unable with time to fix it 1/2 11:55
 	FVector GetRandomValidLocationAroundPlayer();
 
 	UFUNCTION()
