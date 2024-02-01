@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "NiagaraSystem.h"
 #include "PooledActor.h"
 #include "PoolingSystem.h"
 #include "GameFramework/Actor.h"
@@ -25,7 +26,8 @@ class TTKGAMEPLAYWORKTEST_API ASpawnSystem : public AActor
 
 	void OnInitializePools();
 
-	FVector GetRandomValidLocationAroundPlayer();
+	//BUG something bizarre happened with this method. Unable with time to fix it 1/2 11:55
+	// FVector GetRandomValidLocationAroundPlayer();
 
 	UFUNCTION()
 	void RemoveDeadEnemyFromWave(APooledActor* PooledActor);

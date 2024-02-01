@@ -18,45 +18,46 @@ void ASpawnSystem::OnInitializePools()
 	}
 }
 
-//Spawns around the player randomly, while checking if the location has a nav mesh.
-FVector ASpawnSystem::GetRandomValidLocationAroundPlayer()
-{
-	UWorld* World = GetWorld();
-	if (!World)
-	{
-		return FVector::ZeroVector; 
-	}
-	const ACharacter* PlayerCharacter = UGameplayStatics::GetPlayerCharacter(this, 0); // Assuming 0 for the first player
-	if (!PlayerCharacter)
-	{
-		return FVector::ZeroVector; 
-	}
-	const UNavigationSystemV1* NavSystem = UNavigationSystemV1::GetCurrent(World);
-	if (!NavSystem)
-	{
-		return FVector::ZeroVector; 
-	}
-
-	//The logic behind the enemy spawn location. 
-	const float RandomAngle = FMath::RandRange(0.0f, 360.0f);
-	const FVector OurCharPos = PlayerCharacter->GetActorLocation();
-	const FVector SpawnDirection = FVector::ForwardVector.RotateAngleAxis(RandomAngle, FVector::UpVector);
-	const float Radius = 1000.0f;
-	const FVector RandomLocation = OurCharPos + SpawnDirection * Radius ;
-
-
-	const FVector LocalOffSetZ = FVector(0.0f, 0.0f, OffSetZ);
-	FNavLocation NavLocation;
-	// Check if the random location is on the navigation mesh
-	if (NavSystem->GetRandomPointInNavigableRadius(RandomLocation, Radius, NavLocation))
-	{
-		return NavLocation.Location + LocalOffSetZ;
-	}
-	else
-	{
-		return FVector::ZeroVector;
-	}
-}
+//BUG fix this bizarre bug
+// //Spawns around the player randomly, while checking if the location has a nav mesh.
+// FVector ASpawnSystem::GetRandomValidLocationAroundPlayer()
+// {
+// 	UWorld* World = GetWorld();
+// 	if (!World)
+// 	{
+// 		return FVector::ZeroVector; 
+// 	}
+// 	ACharacter* PlayerCharacter = UGameplayStatics::GetPlayerCharacter(this, 0); // Assuming 0 for the first player
+// 	if (!PlayerCharacter)
+// 	{
+// 		return FVector::ZeroVector; 
+// 	}
+// 	UNavigationSystemV1* NavSystem = UNavigationSystemV1::GetCurrent(World);
+// 	if (!NavSystem)
+// 	{
+// 		return FVector::ZeroVector; 
+// 	}
+//
+// 	//The logic behind the enemy spawn location. 
+// 	float RandomAngle = FMath::RandRange(0.0f, 360.0f);
+// 	FVector OurCharPos = PlayerCharacter->GetActorLocation();
+// 	FVector SpawnDirection = FVector::ForwardVector.RotateAngleAxis(RandomAngle, FVector::UpVector);
+// 	float Radius = 1000.0f;
+// 	FVector RandomLocation = OurCharPos + SpawnDirection * Radius ;
+//
+//
+// 	FVector LocalOffSetZ = FVector(0.0f, 0.0f, OffSetZ);
+// 	FNavLocation NavLocation;
+// 	// Check if the random location is on the navigation mesh
+// 	if (NavSystem->GetRandomPointInNavigableRadius(RandomLocation, Radius, NavLocation))
+// 	{
+// 		return NavLocation.Location + LocalOffSetZ;
+// 	}
+// 	else
+// 	{
+// 		return FVector::ZeroVector;
+// 	}
+// }
 
 //When enemies dies. They are broadcasted which activates this method and removes the dead enemy from the wave array.
 void ASpawnSystem::RemoveDeadEnemyFromWave(APooledActor* PooledActor)
@@ -86,7 +87,7 @@ void ASpawnSystem::SpawnWaves()
 				break;
 			}
 
-			SpawnOnRandomLocations = GetRandomValidLocationAroundPlayer();
+			// SpawnOnRandomLocations = GetRandomValidLocationAroundPlayer();
 			UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), SpawnVfx, SpawnOnRandomLocations);
 
 			//Place a SpawnVFX inside the blueprint.

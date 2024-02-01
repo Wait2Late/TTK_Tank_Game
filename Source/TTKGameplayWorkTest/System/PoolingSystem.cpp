@@ -50,7 +50,7 @@ APooledActor* APoolingSystem::OnBeginPool()
 			{
 				PoolsActor->SetActive(false);
 				PoolsActor->SetPoolIndex(i);
-				PoolsActor->OnPooledActorDespawn.AddDynamic(this, &APoolingSystem::OnPooledActorDespawn);
+				PoolsActor->OnPooledActorDespawn.AddDynamic(this, &APoolingSystem::OnPooledActorDelegateDespawn);
 				PooledActors.Add(PoolsActor);
 			}
 		}
@@ -60,9 +60,9 @@ APooledActor* APoolingSystem::OnBeginPool()
 }
 
 //Remves the indexes when the PooledActors are dead/gone. Broadcasts from the PooledActor class.
-void APoolingSystem::OnPooledActorDespawn(APooledActor* PooledActor)
+void APoolingSystem::OnPooledActorDelegateDespawn(APooledActor* Pooled)
 {
-	SpawnPooledActorIndexes.Remove(PooledActor->GetPoolIndex());
+	SpawnPooledActorIndexes.Remove(Pooled->GetPoolIndex());
 }
 
 int APoolingSystem::GetPoolSize()

@@ -8,7 +8,7 @@
 #include "PoolingSystem.generated.h"
 
 UCLASS()
-class TTKGAMEPLAYWORKTEST_API APoolingSystem : public APooledActor
+class TTKGAMEPLAYWORKTEST_API APoolingSystem : public AActor
 {
 	GENERATED_BODY()
 
@@ -34,7 +34,7 @@ public:
 	APooledActor* OnBeginPool();
 
 	UFUNCTION()
-	void OnPooledActorDespawn(APooledActor* PooledActor);
+	void OnPooledActorDelegateDespawn(APooledActor* Pooled);
 
 	UPROPERTY(BlueprintReadWrite, Category="Pooled Actor Category")
 	TArray<APooledActor*> PooledActors;

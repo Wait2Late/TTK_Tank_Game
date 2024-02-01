@@ -8,9 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce8bb6ef-7f86-4538-883a-df26dc43b7aa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestBullet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestBullet.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestEnemySystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestEnemySystem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestEnemySystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/Gameplay/TTKGameplayWorkTestEnemySystem.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TTKGameplayWorkTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TTKGameplayWorkTest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/System/PooledActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/System/PooledActor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/System/PoolingSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/System/PoolingSystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/System/PoolingSystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/System/PoolingSystem.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/System/SpawnSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/System/SpawnSystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/System/SpawnSystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TTKGameplayWorkTest/System/SpawnSystem.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +121,7 @@
       <updated>1706267737952</updated>
       <workItem from="1706267739045" duration="3165000" />
       <workItem from="1706374190840" duration="1083000" />
-      <workItem from="1706696951522" duration="20620000" />
+      <workItem from="1706696951522" duration="23776000" />
     </task>
     <servers />
   </component>

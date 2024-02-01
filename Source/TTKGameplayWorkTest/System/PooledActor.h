@@ -22,7 +22,7 @@ public:
 	void Deactivate();
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void OnSetActiveCalled(bool bIsActive);
+	void OnSetActiveCalled(bool IsActive);
 	
 	UFUNCTION(BlueprintCallable, Category="SetActive Category")
 	void SetActive(bool IsActive);
