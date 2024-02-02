@@ -16,7 +16,6 @@ enum class EEnemyTypes : uint8
 	MeleeEnemy UMETA(DisplayName = "MeleeEnemy"),
 	RangedEnemy UMETA(DisplayName = "RangedEnemy"),
 	FlyingEnemy UMETA(DisplayName = "FlyingEnemy")
-
 };
 
 UCLASS()
